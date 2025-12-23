@@ -1,0 +1,16 @@
+package com.sesame.minired.repository;
+
+import com.sesame.minired.entities.Interaction;
+import com.sesame.minired.entities.Post;
+import com.sesame.minired.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface InteractionRepository extends JpaRepository<Interaction, Long> {
+    List<Interaction> findByPost(Post post);
+
+    List<Interaction> findByUser(User user);
+}
