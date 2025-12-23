@@ -32,4 +32,7 @@ public class Community implements Serializable {
 
     @OneToMany(mappedBy = "community")
     private List<Post> posts;
+
+    @OneToMany(mappedBy = "promo")
+    private List<User> users;
 }

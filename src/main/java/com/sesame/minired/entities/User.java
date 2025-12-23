@@ -27,9 +27,11 @@ public class User implements Serializable {
 
     private String name;
 
-    private String promo;
-
     private String bio;
+
+    @ManyToOne
+    @JoinColumn(name = "promo_id") // the column in the user table that references the promo
+    private Community promo;
 
     @Enumerated(EnumType.STRING)
     private Role role;
